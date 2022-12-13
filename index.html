@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="studentinformationform.css">
+    <script>
+        function adminsignupform(){
+            var Rollno=document.secondform.Rollno.value;
+            var name=document.secondform.name.value;
+            regname=/^[A-Za-z]+$/;
+            var email=document.secondform.email.value;
+            var reg=/^([a-zA-Z0-9\._]+)@([a-z]+)\.[a-z]{2,3}$/;
+            var number=document.secondform.number.value;
+            var reg1=/^[6-9]\d{9}$/;
+            var city=document.secondform.city.value;
+            if(Rollno==""){
+                alert("please enter your Roll No");
+                return false;
+            }
+            if(isNaN(Rollno)){
+                alert("Roll No contains only digits");
+                return false;
+            }
+            if(Rollno.length<8){
+                alert("Roll should contain a minimum of 8 characters");
+                return false;
+            }
+            if(name==""){
+                alert("Please enter your name");
+                return false;
+            }
+            if(name.length<3){
+                alert("please check your name");
+                return false;
+            }
+            if(!name.match(regname)){
+                alert("Name contains only Alphabets");
+                return false;
+            }
+            if(email==""){
+                alert("Please enter your email Id");
+                return false;
+            }
+            if(!email.match(reg)){
+                alert("Enter a valid email Id");
+                return false;
+            }
+            if(number==""){
+                alert("Enter your mobile number");
+                return false;
+            }
+            if(isNaN(number)||number.length!=10){
+                alert("please enter a valid number");
+                return false;
+            }
+            if(!number.match(reg1)){
+                alert("Please enter a valid number");
+                return false;
+            }
+            if(city==""){
+                alert("Please enter the city");
+                return false;
+            }
+            if(city.length<3){
+                alert("please enter the city name properly");
+                return false;
+            }
+            if(!city.match(regname)){
+                alert("city name contains only Alphabets");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h2 class="head2">Student Information Form</h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        </nav>
+        <div class="bgimg">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="boxes">
+                        <img src="https://media.istockphoto.com/id/941665020/vector/man-at-computer-filling-online-questionnaire-form-survey-vector-flat-concept.jpg?s=170667a&w=0&k=20&c=ggy33kFwEpeH0ARabuBjtWvNdaYlECgqSaNlaj-sjoQ=" class="boxesimg"/>
+                    </div>
+                    <div class="boxes2">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="box shadow">
+                        <form name="secondform" onsubmit="return adminsignupform()" class="adminform"/><br/>
+                        <h4 class="head4">Please complete the following in its entirety.</h3><br/>
+                        <input type="text" class="formfields" name="Rollno" placeholder="Enter Roll No"/>
+                        <input type="text" class="formfields" name="name" placeholder="Enter a name"/>
+                        <input type="text" class="formfields" name="email" placeholder="Enter email"/>
+                        <input type="text" class="formfields" name="number" placeholder="Enter Mobile No"/>
+                        <input type="text" class="formfields" name="city" placeholder="Enter city name"/>
+                        <p><input type="submit" class="submitbutton" value="Submit"/>
+                        <input type="reset" class="resetbutton" value="Reset"/></p><br/>
+                        </form>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
